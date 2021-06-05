@@ -1,0 +1,106 @@
+
+// ini client
+function order() {
+//
+$contohdata =
+{
+	"order": {
+		"no_order": "ABC31052021-003",
+		"nama": "pesanang",
+		"tgl_order": "31-05-2001",
+		"detailOrder": [
+			{
+				"id": "det001",
+                "id_order": "ABC31052021-003",
+				"nama_barang": "makanan"
+			},
+			{
+				"id": "det002",
+                "id_order": "ABC31052021-003",
+				"nama_barang": "makanan2"
+			}
+		]
+	}
+}
+
+method 'post', http://localhost/backend/Insert,$contohdata
+}
+
+
+http://localhost/backend/order
+// ini diserver
+public function post_Insert($data) {
+    // ini diserver
+$data->order;
+foreach ($data->order as $dataorder){
+    fungsi insert ke table order
+    $insert = [
+        $dataorder->no_order;
+        $dataorder->nama;
+        $dataorder->tgl_order;
+    ];
+    function insert(tbl_order, $insert);
+
+    foreach ($dataorder->detailOrder as datadetailOrder){
+    $insert = [
+        $datadetailOrder->id;
+        $datadetailOrder->id_order;
+        $datadetailOrder->nama_barang;
+    ];
+    function insertdetail(tbl_order_detail, $insert);
+    };
+}
+
+}
+
+
+
+function getdataserverOrder(){
+    getdatadari table order
+    data order di table_order tampung ke variable $data
+    $data = http://localhost/backend/getorder
+    $data->no_order = $this->getNoOrder(); //ini lempar ke view form_order
+}
+view formorder.php
+e.g :
+<form method='post' action='generate'>
+<input type=text name=no_oreder value=$data->no_order>
+<input type=text name=nama value=$data->no_order>
+<input type=text name=tgl_order value=$data->no_order>
+submit
+</form>
+
+publi function generate() {
+    $no_order =$this->input->get(no_oreder);
+    $nama =$this->input->get(nama);
+    $tgl_order =$this->input->get(tgl_order);
+
+    $mapping = []
+    $mapping['order'] = [
+		"no_order": "ABC31052021-003",
+		"nama": "pesanang",
+		"tgl_order": "31-05-2001",
+    
+		$mapping['order'][detailOrder = [
+				"id": "det001",
+                "id_order": "ABC31052021-003",
+				"nama_barang": "makanan"
+            ],
+			[
+				"id": "det002",
+                "id_order": "ABC31052021-003",
+				"nama_barang": "makanan2"
+            ]
+		]
+
+
+	kirim $$mapping ke controller di server post_Insert($mapping)
+
+
+}
+
+
+
+public function getNoOrder() {
+    ini function yang kita buat tadi
+}
